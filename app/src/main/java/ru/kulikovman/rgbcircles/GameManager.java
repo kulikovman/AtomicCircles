@@ -20,10 +20,14 @@ public class GameManager {
     }
 
     private void initEnemyCircles() {
+        SimpleCircle mainCircleArea = mainCircle.getCircleArea();
+
         circles = new ArrayList<EnemyCircle>();
         for (int i = 0; i < MAX_CIRCLES; i++) {
             EnemyCircle circle;
-            circle = EnemyCircle.getRandomCircle();
+            do {
+                circle = EnemyCircle.getRandomCircle();
+            } while (circle.isIntersect(mainCircleArea));
             circles.add(circle);
         }
 
