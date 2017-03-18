@@ -7,9 +7,11 @@ import android.graphics.Point;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.Display;
+import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.Toast;
 
 public class CanvasView extends View implements ICanvasView {
     private static int width;
@@ -17,6 +19,7 @@ public class CanvasView extends View implements ICanvasView {
     private GameManager gameManager;
     private Paint paint;
     private Canvas canvas;
+    private Toast toast;
 
     public CanvasView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
@@ -57,6 +60,17 @@ public class CanvasView extends View implements ICanvasView {
     @Override
     public void redraw() {
         invalidate();
+    }
+
+    @Override
+    public void showMessage(String text) {
+        if (toast != null) {
+            toast.cancel();
+        }
+
+        toast = Toast.makeText(getContext(), text, Toast.LENGTH_SHORT);
+        //toast.setGravity(Gravity.CENTER, 0, 0);
+        toast.show();
     }
 
     @Override
