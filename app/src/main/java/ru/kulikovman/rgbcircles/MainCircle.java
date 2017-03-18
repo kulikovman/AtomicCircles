@@ -18,4 +18,8 @@ public class MainCircle extends SimpleCircle {
         x += dx;
         y += dy;
     }
+
+    public void initRadius() {
+        radius = INIT_RADIUS;
+    }
 }
