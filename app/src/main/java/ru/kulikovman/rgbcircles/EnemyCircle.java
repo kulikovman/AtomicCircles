@@ -34,12 +34,12 @@ public class EnemyCircle extends SimpleCircle {
     }
 
     public void setEnemyOrFoodColorDependsOn(MainCircle mainCircle) {
-        if (isSmallerThen(mainCircle)) {
+        if (isSmallerThan(mainCircle)) {
             setColor(FOOD_COLOR);
         } else setColor(ENEMY_COLOR);
     }
 
-    private boolean isSmallerThen(SimpleCircle circle) {
+    public boolean isSmallerThan(SimpleCircle circle) {
         if (radius < circle.radius) return true;
         return false;
     }
