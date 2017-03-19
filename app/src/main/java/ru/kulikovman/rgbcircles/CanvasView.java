@@ -69,7 +69,7 @@ public class CanvasView extends View implements ICanvasView {
         }
 
         toast = Toast.makeText(getContext(), text, Toast.LENGTH_SHORT);
-        //toast.setGravity(Gravity.CENTER, 0, 0);
+        toast.setGravity(Gravity.CENTER, 0, 0);
         toast.show();
     }
 
@@ -77,13 +77,15 @@ public class CanvasView extends View implements ICanvasView {
     public boolean onTouchEvent(MotionEvent event) {
         int x = (int) event.getX();
         int y = (int) event.getY();
-
         if (event.getAction() == MotionEvent.ACTION_MOVE) {
             gameManager.oneTouchEvent(x, y);
         }
 
         invalidate();
-
         return true;
+    }
+
+    public static int recalculateRadius(int radius) {
+        return radius * width / 768;
     }
 }

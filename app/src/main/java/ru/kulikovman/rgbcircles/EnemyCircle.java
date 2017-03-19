@@ -26,7 +26,7 @@ public class EnemyCircle extends SimpleCircle {
         int y = random.nextInt(GameManager.getHeight());
         int dx = 1 + random.nextInt(RANDOM_SPEED);
         int dy = 1 + random.nextInt(RANDOM_SPEED);
-        int radius = FROM_RADIUS + random.nextInt(TO_RADIUS - FROM_RADIUS);
+        int radius = CanvasView.recalculateRadius(FROM_RADIUS + random.nextInt(TO_RADIUS - FROM_RADIUS));
 
         EnemyCircle enemyCircle = new EnemyCircle(x, y, radius, dx, dy);
 

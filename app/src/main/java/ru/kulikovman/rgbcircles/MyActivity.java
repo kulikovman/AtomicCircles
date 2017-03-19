@@ -1,10 +1,10 @@
 package ru.kulikovman.rgbcircles;
 
-import android.support.v7.app.AppCompatActivity;
+import android.app.Activity;
 import android.os.Bundle;
 import android.view.Window;
 
-public class MyActivity extends AppCompatActivity {
+public class MyActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
