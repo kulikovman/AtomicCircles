@@ -1,4 +1,4 @@
-package ru.kulikovman.rgbcircles;
+package ru.kulikovman.atomiccircles;
 
 
 public interface ICanvasView {

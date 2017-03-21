@@ -1,5 +1,4 @@
-package ru.kulikovman.rgbcircles;
-
+package ru.kulikovman.atomiccircles;
 
 import java.util.ArrayList;
 
@@ -22,7 +21,7 @@ public class GameManager {
     private void initEnemyCircles() {
         SimpleCircle mainCircleArea = mainCircle.getCircleArea();
 
-        circles = new ArrayList<EnemyCircle>();
+        circles = new ArrayList<>();
         for (int i = 0; i < MAX_CIRCLES; i++) {
             EnemyCircle circle;
             do {

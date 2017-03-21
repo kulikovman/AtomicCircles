@@ -1,5 +1,4 @@
-package ru.kulikovman.rgbcircles;
-
+package ru.kulikovman.atomiccircles;
 
 public class SimpleCircle {
     protected int x;
@@ -10,7 +9,6 @@ public class SimpleCircle {
     public SimpleCircle(int x, int y, int radius) {
         this.x = x;
         this.y = y;
-        //this.radius = CanvasView.recalculateRadius(radius);
         this.radius = radius;
     }
 
