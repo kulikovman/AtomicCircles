@@ -25,8 +25,8 @@ public class EnemyCircle extends SimpleCircle {
         int radius = CanvasView.recalculateRadius(FROM_RADIUS + random.nextInt(TO_RADIUS - FROM_RADIUS));
 
         //Create start position
-        int x = radius + random.nextInt(GameManager.getWidth() - radius);
-        int y = radius + random.nextInt(GameManager.getHeight() - radius);
+        int x = radius + random.nextInt(GameManager.getWidth() - radius * 2);
+        int y = radius + random.nextInt(GameManager.getHeight() - radius * 2);
 
         //Initial direction of movement
         double direction = random.nextDouble() * 360;
