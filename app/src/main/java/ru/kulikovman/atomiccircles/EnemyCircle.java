@@ -7,7 +7,7 @@ public class EnemyCircle extends SimpleCircle {
     public static final int FROM_RADIUS = 10;
     public static final int TO_RADIUS = 110;
     public static final int ENEMY_COLOR = Color.rgb(255, 82, 76);
-    public static final int FOOD_COLOR = Color.rgb(71, 255, 64);
+    public static final int FOOD_COLOR = Color.rgb(80, 229, 117);
     public static final int RANDOM_SPEED = 10;
     private int dx;
     private int dy;
@@ -22,13 +22,16 @@ public class EnemyCircle extends SimpleCircle {
         Random random = new Random();
         int x = random.nextInt(GameManager.getWidth());
         int y = random.nextInt(GameManager.getHeight());
-        int dx = 1 + random.nextInt(RANDOM_SPEED);
-        int dy = 1 + random.nextInt(RANDOM_SPEED);
+
+        //Initial direction of movement
+        double direction = random.nextDouble() * 360;
+        double angel = Math.toRadians(direction);
+        int dx = (int) (Math.cos(angel) * RANDOM_SPEED);
+        int dy = (int) (-Math.sin(angel) * RANDOM_SPEED);
+
         int radius = CanvasView.recalculateRadius(FROM_RADIUS + random.nextInt(TO_RADIUS - FROM_RADIUS));
 
-        EnemyCircle enemyCircle = new EnemyCircle(x, y, radius, dx, dy);
-
-        return enemyCircle;
+        return new EnemyCircle(x, y, radius, dx, dy);
     }
 
     public void setEnemyOrFoodColorDependsOn(MainCircle mainCircle) {
