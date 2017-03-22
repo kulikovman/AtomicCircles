@@ -11,6 +11,7 @@ public class EnemyCircle extends SimpleCircle {
     public static final int RANDOM_SPEED = 10;
     private int dx;
     private int dy;
+    //private int radius;
 
     public EnemyCircle(int x, int y, int radius, int dx, int dy) {
         super(x, y, radius);
@@ -34,8 +35,6 @@ public class EnemyCircle extends SimpleCircle {
         int dx = (int) (Math.cos(angel) * RANDOM_SPEED);
         int dy = (int) (-Math.sin(angel) * RANDOM_SPEED);
 
-
-
         return new EnemyCircle(x, y, radius, dx, dy);
     }
 
@@ -57,7 +56,7 @@ public class EnemyCircle extends SimpleCircle {
     }
 
     private void checkBounds() {
-        if (x > GameManager.getWidth() || x < 0) dx = -dx;
-        if (y > GameManager.getHeight() || y < 0) dy = -dy;
+        if (x > GameManager.getWidth() - radius || x < radius) dx = -dx;
+        if (y > GameManager.getHeight() - radius || y < radius) dy = -dy;
     }
 }
