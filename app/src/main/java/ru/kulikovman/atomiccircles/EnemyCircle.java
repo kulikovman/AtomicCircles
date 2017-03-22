@@ -20,8 +20,13 @@ public class EnemyCircle extends SimpleCircle {
 
     public static EnemyCircle getRandomCircle() {
         Random random = new Random();
-        int x = random.nextInt(GameManager.getWidth());
-        int y = random.nextInt(GameManager.getHeight());
+
+        //Create circle radius
+        int radius = CanvasView.recalculateRadius(FROM_RADIUS + random.nextInt(TO_RADIUS - FROM_RADIUS));
+
+        //Create start position
+        int x = radius + random.nextInt(GameManager.getWidth() - radius);
+        int y = radius + random.nextInt(GameManager.getHeight() - radius);
 
         //Initial direction of movement
         double direction = random.nextDouble() * 360;
@@ -29,7 +34,7 @@ public class EnemyCircle extends SimpleCircle {
         int dx = (int) (Math.cos(angel) * RANDOM_SPEED);
         int dy = (int) (-Math.sin(angel) * RANDOM_SPEED);
 
-        int radius = CanvasView.recalculateRadius(FROM_RADIUS + random.nextInt(TO_RADIUS - FROM_RADIUS));
+
 
         return new EnemyCircle(x, y, radius, dx, dy);
     }
