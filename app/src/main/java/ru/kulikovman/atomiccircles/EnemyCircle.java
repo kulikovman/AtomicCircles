@@ -11,7 +11,6 @@ public class EnemyCircle extends SimpleCircle {
     public static final int RANDOM_SPEED = 10;
     private int dx;
     private int dy;
-    //private int radius;
 
     public EnemyCircle(int x, int y, int radius, int dx, int dy) {
         super(x, y, radius);
